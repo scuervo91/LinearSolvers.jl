@@ -1,6 +1,10 @@
 module LinearSolvers
 
+export NaiveGauss, PivotGauss, LUSolve, Cholesky, CroutLU, DolittleLU, GaussSeidelSolve,
+        InverseLU, InverseLUSolve, Reg, TridiagLU, TridiagLUSolve
+
 using LinearAlgebra
+using Statistics
 
 include("Cholesky.jl")
 include("CroutLU.jl")
@@ -13,6 +17,8 @@ include("NaiveGauss.jl")
 include("PivotGauss.jl")
 include("TridiagLU.jl")
 include("TridiagLUSolve.jl")
+include("Reg.jl")
+
 
 
 

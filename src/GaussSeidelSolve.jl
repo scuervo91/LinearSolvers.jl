@@ -42,5 +42,5 @@ function GaussSeidelSolve(A::Any,B::Vector; ϵ=0.05, MaxItr=30, λ=1)
     end #End while loop
 
 
-    return X
+    return X[end,:]
 end
