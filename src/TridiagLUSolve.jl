@@ -1,4 +1,4 @@
-function TridiagLUSolve(A::Any,B::Vector)
+function ThomasLUSolve(A::Any,B::Vector)
       #A = the matrix of coefficients 'A' must be squared
   #B = The Vector 'B' right hand side vector Vertical
     m,n =size(A)

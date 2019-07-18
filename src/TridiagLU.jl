@@ -1,4 +1,4 @@
-function TridiagLU(A)
+function ThomasLU(A)
 
   #A = the matrix of coefficients 'A' must be squared
 

@@ -21,7 +21,7 @@ function GaussSeidelSolve(A::Any,B::Vector; ϵ=0.05, MaxItr=30, λ=1)
 
     X=zeros(1,m)
     itr=2
-    println(cond)
+    
     while cond==false
 
         X=vcat(X,X[[itr-1],:])

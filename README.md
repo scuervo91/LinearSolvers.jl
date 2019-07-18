@@ -167,6 +167,96 @@ x=InverseLUSolve(A,B)
  212.17038539553752
  315.82150101419876
 ```
+### Tridiagonal matrix
+
+You can decompose a tridiagonal matrix in a more efficient way by applying the Thomas Algorithms
+
+```julia
+A=[2.04 -1. 0 0;-1 2.04 -1 0; 0 -1 2.04 -1; 0 0 -1 2.04]
+L,U=ThomasLU(A)
+display(L)
+display(U)
+display(L*U)
+
+4×4 Tridiagonal{Float64,Array{Float64,1}}:
+  1.0        0.0         ⋅         ⋅
+ -0.490196   1.0        0.0        ⋅
+   ⋅        -0.645243   1.0       0.0
+   ⋅          ⋅        -0.716971  1.0
+4×4 Tridiagonal{Float64,Array{Float64,1}}:
+ 2.04  -1.0       ⋅         ⋅     
+ 0.0    1.5498  -1.0        ⋅     
+  ⋅     0.0      1.39476  -1.0    
+  ⋅      ⋅       0.0       1.32303
+4×4 Array{Float64,2}:
+  2.04  -1.0    0.0    0.0
+ -1.0    2.04  -1.0    0.0
+  0.0   -1.0    2.04  -1.0
+  0.0    0.0   -1.0    2.04
+```
+
+You can solve by LU decomposition a tridiagonal system of Equations
+
+```julia
+A=[2.04 -1. 0 0;-1 2.04 -1 0; 0 -1 2.04 -1; 0 0 -1 2.04]
+B=[40.8,0.8,0.8,200.8]
+x=ThomasLUSolve(A,B)
+
+4-element Array{Float64,1}:
+  65.96983436677662
+  93.77846210822433
+ 124.538228334001  
+ 159.47952369313774
+ ```
+
+## Crout Decomposition
+
+You can Decompose a matrix using a Crout Algorithms
+
+```
+A=[3 -0.1 -0.2;0.1 7 -0.3;0.3 0.2 10]
+L,U=CroutLU(A)
+
+display(L)
+display(U)
+display(L*U)
+
+3×3 Array{Float64,2}:
+ 3.0  0.0       0.0   
+ 0.1  7.00333   0.0   
+ 0.3  0.21     10.0288
+3×3 Array{Float64,2}:
+ 1.0  -0.0333333  -0.0666667
+ 0.0   1.0        -0.0418848
+ 0.0   0.0         1.0      
+3×3 Array{Float64,2}:
+ 3.0  -0.1  -0.2
+ 0.1   7.0  -0.3
+ 0.3   0.2  10.0
+
+```
+
+## Cholesky decomposition
+
+You can decompose a symmetric matrix by applying the Cholesky algorithm
+
+```julia
+A=[6. 15. 55.; 15. 55. 225.; 55. 225. 979.]
+L=CholeskyL(A)
+display(L)
+display(L*L')
+
+3×3 Array{Float64,2}:
+  2.44949   0.0     0.0   
+  6.12372   4.1833  0.0   
+ 22.4537   20.9165  6.1101
+3×3 Array{Float64,2}:
+  6.0   15.0   55.0
+ 15.0   55.0  225.0
+ 55.0  225.0  979.0
+```
+
+
 
 ## Iterative Linear Solvers
 

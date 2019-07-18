@@ -1,4 +1,4 @@
-function Cholesky(A::Array)
+function CholeskyL(A::Array)
 
   #A = the matrix of coefficients 'A' must be squared
 

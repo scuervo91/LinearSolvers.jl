@@ -1,7 +1,7 @@
 module LinearSolvers
 
-export NaiveGauss, PivotGauss, LUSolve, Cholesky, CroutLU, DolittleLU, GaussSeidelSolve,
-        InverseLU, InverseLUSolve, Reg, TridiagLU, TridiagLUSolve
+export NaiveGauss, PivotGauss, LUSolve, CholeskyL, CroutLU, DolittleLU, GaussSeidelSolve,
+        InverseLU, InverseLUSolve, Reg, ThomasLU, ThomasLUSolve
 
 using LinearAlgebra
 using Statistics
