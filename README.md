@@ -21,7 +21,6 @@ LinearSolvers.jl is a package that provides some Linear Algebra Algorithms that 
 
 The algorithms written in this packages are described by Chapra(1)
 
-(1)Chapra, S. C., & Canale, R. P. (2010). Numerical methods for engineers. McGraw-Hill Higher Education.
 
 ## Gauss Elimination Solvers  
 
@@ -29,6 +28,11 @@ The algorithms written in this packages are described by Chapra(1)
   - Pivot Gauss Elimination
 
 ### Example
+
+```julia
+using LinearSolvers
+using LinearAlgebra
+```
 
 Given a Linear system of Equations whcih can be represented in a matrix form
   <img src="LinearSolvers_EQ1.png"><br>
@@ -280,3 +284,6 @@ Iteration 3 Error 2.9227911545754854 %
   7.991679657974301
  -1.9991918394341863
 ```
+# References
+
+Chapra, S. C., & Canale, R. P. (2010). Numerical methods for engineers. McGraw-Hill Higher Education.
