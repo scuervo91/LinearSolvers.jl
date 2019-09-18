@@ -9,7 +9,7 @@ function DolittleLU(A::Array; pivot=true)
     end
 
     # System of equations
-    U=A
+    U = A
     P=Matrix{Float64}(I,m,m)
     p=zeros(m)
     L=zeros(m,m)

@@ -1,4 +1,4 @@
-function GaussSeidelSolve(A::Any,B::Vector; ϵ=0.05, MaxItr=30, λ=1)
+function GaussSeidelSolve(A::Any,B::Vector; Guess=false,ϵ=0.05, MaxItr=30, λ=1)
       #A = the matrix of coefficients 'A' must be squared
   #B = The Vector 'B' right hand side vector Vertical
     m,n =size(A)
@@ -19,9 +19,9 @@ function GaussSeidelSolve(A::Any,B::Vector; ϵ=0.05, MaxItr=30, λ=1)
        c[i,:]= A[i,W]
     end
 
-    X=zeros(1,m)
+    Guess==false ? X=zeros(1,m) : X=Guess'
     itr=2
-    
+
     while cond==false
 
         X=vcat(X,X[[itr-1],:])
@@ -42,5 +42,5 @@ function GaussSeidelSolve(A::Any,B::Vector; ϵ=0.05, MaxItr=30, λ=1)
     end #End while loop
 
 
-    return X[end,:]
+    return X[end,:], itr
 end
